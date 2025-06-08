@@ -1,0 +1,33 @@
+import React, { useEffect, useState } from "react";
+import api from "../services/api";
+
+export default function Pedidos() {
+  const [pedidos, setPedidos] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchPedidos() {
+      try {
+        const res = await api.get("/pedidos");
+        setPedidos(res.data);
+      } catch (err) {
+        setError("Erro ao carregar pedidos");
+      }
+    }
+    fetchPedidos();
+  }, []);
+
+  return (
+    <div>
+      <h2>Pedidos</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <ul>
+        {pedidos.map((p) => (
+          <li key={p._id}>
+            Pedido #{p._id} - Cliente: {p.cliente?.nome || "Desconhecido"} - Total: R$ {p.total.toFixed(2)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
