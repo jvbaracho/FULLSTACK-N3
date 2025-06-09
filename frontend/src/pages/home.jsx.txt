@@ -1,0 +1,25 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
+export default function Home() {
+  const { user, logout } = useAuth();
+
+  return (
+    <div>
+      <h1>Bem-vindo à Pizzaria Online!</h1>
+      {user ? (
+        <>
+          <p>Olá, {user.name || user.email}</p>
+          <button onClick={logout}>Sair</button>
+          <nav>
+            <Link to="/produtos">Produtos</Link> |{" "}
+            {user.role === "admin" && <Link to="/admin/dashboard">Admin Dashboard</Link>}
+          </nav>
+        </>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
+    </div>
+  );
+}
