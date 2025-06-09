@@ -1,7 +1,7 @@
 PORT=5000
 MONGO_URI=
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://<db_username>:<db_password>@pizzariaclustern3.fus6jak.mongodb.net/?retryWrites=true&w=majority&appName=PIZZARIACLUSTERN3";
+const uri = "mongodb+srv://<jvbaracho2004>:<hxzza;gdkD7#=Ra>@pizzariaclustern3.fus6jak.mongodb.net/?retryWrites=true&w=majority&appName=PIZZARIACLUSTERN3";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
