@@ -1,0 +1,1 @@
+mongodb+srv://<jvbaracho2004>:<hxzza;gdkD7#=Ra>@cluster-shard-00-00.mongodb.net:27017,cluster-shard-00-01.mongodb.net:27017,cluster-shard-00-02.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-xxxxx-shard-0&authSource=admin&retryWrites=true&w=majority
